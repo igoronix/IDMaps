@@ -12,9 +12,13 @@
 		782B116A1ECF736B00C71FA6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 782B11681ECF736B00C71FA6 /* Main.storyboard */; };
 		782B116C1ECF736B00C71FA6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 782B116B1ECF736B00C71FA6 /* Assets.xcassets */; };
 		782B116F1ECF736B00C71FA6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 782B116D1ECF736B00C71FA6 /* LaunchScreen.storyboard */; };
+		78C7BB131ECF7AFD00557FE9 /* MapManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C7BB121ECF7AFD00557FE9 /* MapManager.swift */; };
+		78C7BB151ECF807400557FE9 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C7BB141ECF807400557FE9 /* UIView.swift */; };
+		8FB60A9C020922C3CA2AE77E /* Pods_IDMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 787FA1C481C201065ED60231 /* Pods_IDMaps.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6D39448956050CEA33059ABE /* Pods-IDMaps.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IDMaps.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IDMaps/Pods-IDMaps.debug.xcconfig"; sourceTree = "<group>"; };
 		782B11611ECF736B00C71FA6 /* IDMaps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IDMaps.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		782B11641ECF736B00C71FA6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		782B11661ECF736B00C71FA6 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +26,10 @@
 		782B116B1ECF736B00C71FA6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		782B116E1ECF736B00C71FA6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		782B11701ECF736B00C71FA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		787FA1C481C201065ED60231 /* Pods_IDMaps.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IDMaps.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		78C7BB121ECF7AFD00557FE9 /* MapManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapManager.swift; sourceTree = "<group>"; };
+		78C7BB141ECF807400557FE9 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		9009EE74A800053608270732 /* Pods-IDMaps.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IDMaps.release.xcconfig"; path = "Pods/Target Support Files/Pods-IDMaps/Pods-IDMaps.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8FB60A9C020922C3CA2AE77E /* Pods_IDMaps.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +49,8 @@
 			children = (
 				782B11631ECF736B00C71FA6 /* IDMaps */,
 				782B11621ECF736B00C71FA6 /* Products */,
+				965F12DA4E34F024EAD07C03 /* Pods */,
+				B1854CAB9E163DDFAACC5BB5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -65,6 +76,8 @@
 		782B11761ECF76E100C71FA6 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				78C7BB121ECF7AFD00557FE9 /* MapManager.swift */,
+				78C7BB141ECF807400557FE9 /* UIView.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -96,6 +109,23 @@
 			name = Storyboards;
 			sourceTree = "<group>";
 		};
+		965F12DA4E34F024EAD07C03 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6D39448956050CEA33059ABE /* Pods-IDMaps.debug.xcconfig */,
+				9009EE74A800053608270732 /* Pods-IDMaps.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B1854CAB9E163DDFAACC5BB5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				787FA1C481C201065ED60231 /* Pods_IDMaps.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -103,9 +133,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 782B11731ECF736B00C71FA6 /* Build configuration list for PBXNativeTarget "IDMaps" */;
 			buildPhases = (
+				7EBD021F71B5C036D2DC1C55 /* [CP] Check Pods Manifest.lock */,
 				782B115D1ECF736B00C71FA6 /* Sources */,
 				782B115E1ECF736B00C71FA6 /* Frameworks */,
 				782B115F1ECF736B00C71FA6 /* Resources */,
+				095E31AA3EB9166DA056197F /* [CP] Embed Pods Frameworks */,
+				C25AEB6042E01015B577A06D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -164,12 +197,62 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		095E31AA3EB9166DA056197F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-IDMaps/Pods-IDMaps-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7EBD021F71B5C036D2DC1C55 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C25AEB6042E01015B577A06D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-IDMaps/Pods-IDMaps-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		782B115D1ECF736B00C71FA6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78C7BB151ECF807400557FE9 /* UIView.swift in Sources */,
 				782B11671ECF736B00C71FA6 /* MapViewController.swift in Sources */,
+				78C7BB131ECF7AFD00557FE9 /* MapManager.swift in Sources */,
 				782B11651ECF736B00C71FA6 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -291,6 +374,7 @@
 		};
 		782B11741ECF736B00C71FA6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6D39448956050CEA33059ABE /* Pods-IDMaps.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -307,6 +391,7 @@
 		};
 		782B11751ECF736B00C71FA6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9009EE74A800053608270732 /* Pods-IDMaps.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -340,6 +425,7 @@
 				782B11751ECF736B00C71FA6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

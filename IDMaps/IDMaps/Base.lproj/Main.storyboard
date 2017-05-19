@@ -35,7 +35,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Maps" id="Yi5-xQ-VgD">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="mhY-MP-zf1">
+                        <barButtonItem key="rightBarButtonItem" title="Settings" id="mhY-MP-zf1">
                             <connections>
                                 <segue destination="WL1-Sh-bPB" kind="show" id="NAq-TW-QVL"/>
                             </connections>

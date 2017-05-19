@@ -15,6 +15,18 @@ class MapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.setupMap(type: .apple)
+    }
+    
+    private func setupMap(type: MapType) {
+        self.mapContainer.subviews.forEach { $0.removeFromSuperview() }
+        
+        let mapView = MapManager.mapView(type: type)
+        mapView.pinToSuperview(self.mapContainer)
+    }
 }
 
