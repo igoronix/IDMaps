@@ -14,6 +14,9 @@
 		782B116F1ECF736B00C71FA6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 782B116D1ECF736B00C71FA6 /* LaunchScreen.storyboard */; };
 		78C7BB131ECF7AFD00557FE9 /* MapManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C7BB121ECF7AFD00557FE9 /* MapManager.swift */; };
 		78C7BB151ECF807400557FE9 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C7BB141ECF807400557FE9 /* UIView.swift */; };
+		78C7BB171ECF86E600557FE9 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C7BB161ECF86E600557FE9 /* SettingsViewController.swift */; };
+		78C7BB191ECF9AC900557FE9 /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C7BB181ECF9AC900557FE9 /* SettingsCell.swift */; };
+		78C7BB1C1ECFA3AC00557FE9 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C7BB1B1ECFA3AC00557FE9 /* Enums.swift */; };
 		8FB60A9C020922C3CA2AE77E /* Pods_IDMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 787FA1C481C201065ED60231 /* Pods_IDMaps.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +32,9 @@
 		787FA1C481C201065ED60231 /* Pods_IDMaps.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IDMaps.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		78C7BB121ECF7AFD00557FE9 /* MapManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapManager.swift; sourceTree = "<group>"; };
 		78C7BB141ECF807400557FE9 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		78C7BB161ECF86E600557FE9 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		78C7BB181ECF9AC900557FE9 /* SettingsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
+		78C7BB1B1ECFA3AC00557FE9 /* Enums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		9009EE74A800053608270732 /* Pods-IDMaps.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IDMaps.release.xcconfig"; path = "Pods/Target Support Files/Pods-IDMaps/Pods-IDMaps.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -78,6 +84,7 @@
 			children = (
 				78C7BB121ECF7AFD00557FE9 /* MapManager.swift */,
 				78C7BB141ECF807400557FE9 /* UIView.swift */,
+				78C7BB1B1ECFA3AC00557FE9 /* Enums.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -85,7 +92,9 @@
 		782B11771ECF76E800C71FA6 /* VC */ = {
 			isa = PBXGroup;
 			children = (
+				78C7BB1A1ECFA32900557FE9 /* Views */,
 				782B11661ECF736B00C71FA6 /* MapViewController.swift */,
+				78C7BB161ECF86E600557FE9 /* SettingsViewController.swift */,
 			);
 			name = VC;
 			sourceTree = "<group>";
@@ -107,6 +116,14 @@
 				782B11681ECF736B00C71FA6 /* Main.storyboard */,
 			);
 			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		78C7BB1A1ECFA32900557FE9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				78C7BB181ECF9AC900557FE9 /* SettingsCell.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		965F12DA4E34F024EAD07C03 /* Pods */ = {
@@ -252,7 +269,10 @@
 			files = (
 				78C7BB151ECF807400557FE9 /* UIView.swift in Sources */,
 				782B11671ECF736B00C71FA6 /* MapViewController.swift in Sources */,
+				78C7BB191ECF9AC900557FE9 /* SettingsCell.swift in Sources */,
 				78C7BB131ECF7AFD00557FE9 /* MapManager.swift in Sources */,
+				78C7BB1C1ECFA3AC00557FE9 /* Enums.swift in Sources */,
+				78C7BB171ECF86E600557FE9 /* SettingsViewController.swift in Sources */,
 				782B11651ECF736B00C71FA6 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

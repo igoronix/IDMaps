@@ -6,26 +6,25 @@
 //  Copyright © 2017 ID. All rights reserved.
 //
 
-import UIKit
-import MapKit
-
-enum MapType {
-    case apple
-    case mapBox
-    
-    static func values() -> [MapType] {
-        return [.apple, .mapBox]
-    }
+protocol MapManagerDelegate: class {
+    func mapManagerDidChangeMap(_ mapType: MapType)
+    func mapManagerDidChangeGeocoder(_ geocoderType: GeocoderType)
 }
 
 class MapManager {
-
-    static func mapView(type: MapType) -> UIView {
-        switch type {
-        case .apple:
-            return MKMapView()
-        case .mapBox:
-            return UIView()
+    static let shared = MapManager()
+    
+    var mapType: MapType = .apple {
+        didSet {
+            self.delegate?.mapManagerDidChangeMap(mapType)
         }
     }
+    
+    var geocoderType: GeocoderType = .google {
+        didSet {
+            self.delegate?.mapManagerDidChangeGeocoder(geocoderType)
+        }
+    }
+    
+    weak var delegate: MapManagerDelegate?
 }

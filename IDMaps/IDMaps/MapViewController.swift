@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import MapKit
+import Mapbox
 
 class MapViewController: UIViewController {
 
@@ -14,19 +16,37 @@ class MapViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
         
-        self.setupMap(type: .apple)
+        MapManager.shared.delegate = self
+        self.setupMap(type: MapManager.shared.mapType)
     }
     
-    private func setupMap(type: MapType) {
+    // MARK: - Private methods
+
+    fileprivate func setupMap(type: MapType) {
         self.mapContainer.subviews.forEach { $0.removeFromSuperview() }
         
-        let mapView = MapManager.mapView(type: type)
+        let mapView = self.mapView(type: type)
         mapView.pinToSuperview(self.mapContainer)
+    }
+    
+     private func mapView(type: MapType) -> UIView {
+        switch type {
+        case .apple:
+            return MKMapView()
+        case .mapBox:
+            return MGLMapView()
+        }
+    }
+}
+
+extension MapViewController: MapManagerDelegate {
+    func mapManagerDidChangeMap(_ mapType: MapType) {
+        self.setupMap(type: mapType)
+    }
+    
+    func mapManagerDidChangeGeocoder(_ geocoderType: GeocoderType) {
+        
     }
 }
 
