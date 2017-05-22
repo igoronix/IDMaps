@@ -15,7 +15,7 @@ class MapViewController: UIViewController {
     @IBOutlet var mapContainer: UIView!
     
     weak var mapView: UIView?
-    var mapDelegate: Any? // Strong-reference to mapView delegate
+    var mapDelegate: MapViewDelegate? // reference to mapView delegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,7 +65,7 @@ class MapViewController: UIViewController {
             let mapBoxView = MGLMapView()
             let delegate = MapBoxViewDelegate()
             mapBoxView.delegate = delegate
-            self.mapDelegate = mapBoxView.delegate
+            self.mapDelegate = delegate
             mapView = mapBoxView
         case .apple:
             let appleMap = MKMapView()
@@ -86,6 +86,6 @@ extension MapViewController: MapManagerDelegate {
     }
     
     func mapManagerDidChangeGeocoder(_ geocoderType: GeocoderType) {
-        
+        self.mapDelegate?.geocoder = MapGeocoder(withType: geocoderType)
     }
 }

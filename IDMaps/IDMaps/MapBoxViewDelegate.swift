@@ -8,8 +8,16 @@
 
 import Mapbox
 
-class MapBoxViewDelegate: NSObject, MGLMapViewDelegate {
+class MapBoxViewDelegate: MapViewDelegate, MGLMapViewDelegate {
     func mapView(_ mapView: MGLMapView, didSelect annotation: MGLAnnotation) {
+        mapView.setCenter(annotation.coordinate, animated: true)
+        self.geocoder.reverseGeocodeLocation(CLLocation(latitude: annotation.coordinate.latitude, longitude: annotation.coordinate.longitude)) { (result, erroe) in
+            
+        }
+
+    }
+    
+    func mapView(_ mapView: MGLMapView, didSelect annotationView: MGLAnnotationView) {
         
     }
 }

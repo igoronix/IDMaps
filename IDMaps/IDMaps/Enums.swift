@@ -32,18 +32,18 @@ enum MapType: Int, SettingsItem {
 
 enum GeocoderType: Int, SettingsItem {
     case apple
-    case google
+    case mapbox
     
     static func values() -> [GeocoderType] {
-        return [.apple, .google]
+        return [.apple, .mapbox]
     }
     
     func title() -> String {
         switch self {
         case .apple:
             return "Native"
-        case .google:
-            return "Google"
+        case .mapbox:
+            return "MapBox"
         }
     }
 }

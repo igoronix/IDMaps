@@ -14,17 +14,17 @@ protocol MapManagerDelegate: class {
 class MapManager {
     static let shared = MapManager()
     
+    weak var delegate: MapManagerDelegate?
+    
     var mapType: MapType = .apple {
         didSet {
             self.delegate?.mapManagerDidChangeMap(mapType)
         }
     }
     
-    var geocoderType: GeocoderType = .google {
+    var geocoderType: GeocoderType = .mapbox {
         didSet {
             self.delegate?.mapManagerDidChangeGeocoder(geocoderType)
         }
     }
-    
-    weak var delegate: MapManagerDelegate?
 }

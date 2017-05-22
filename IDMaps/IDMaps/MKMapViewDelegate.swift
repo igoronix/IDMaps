@@ -8,8 +8,15 @@
 
 import MapKit
 
-class AppleMapViewDelegate: NSObject, MKMapViewDelegate {
+class AppleMapViewDelegate: MapViewDelegate, MKMapViewDelegate {
     
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        guard let coordinate = view.annotation?.coordinate else {
+            return
+        }
+        mapView.setCenter(coordinate, animated: true)
+        self.geocoder.reverseGeocodeLocation(CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)) { (result, erroe) in
+            
+        }
     }
 }

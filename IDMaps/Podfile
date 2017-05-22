@@ -7,4 +7,5 @@ target 'IDMaps' do
 
   # Pods for IDMaps
 pod 'Mapbox-iOS-SDK'
+pod 'MapboxGeocoder.swift'
 end
