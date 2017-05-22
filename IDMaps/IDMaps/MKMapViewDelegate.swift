@@ -14,9 +14,12 @@ class AppleMapViewDelegate: MapViewDelegate, MKMapViewDelegate {
         guard let coordinate = view.annotation?.coordinate else {
             return
         }
-        mapView.setCenter(coordinate, animated: true)
-        self.geocoder.reverseGeocodeLocation(CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)) { (result, erroe) in
-            
-        }
+        
+        view.subviews.forEach { $0.removeFromSuperview() }
+        self.mapViewDidSelect(coordinate: coordinate, withView: view)
+    }
+    
+    func mapView(_ mapView: MKMapView, didDeselect view: MKAnnotationView) {
+        view.subviews.forEach { $0.removeFromSuperview() }
     }
 }

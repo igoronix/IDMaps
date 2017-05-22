@@ -21,6 +21,7 @@
 		78C7BB211ED0F35000557FE9 /* MapBoxViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C7BB201ED0F35000557FE9 /* MapBoxViewDelegate.swift */; };
 		78F9979F1ED2EA8F0023ADBC /* MapGeocoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F9979E1ED2EA8F0023ADBC /* MapGeocoder.swift */; };
 		78F997A11ED2FD4D0023ADBC /* MapViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F997A01ED2FD4D0023ADBC /* MapViewDelegate.swift */; };
+		78F997A81ED35CAC0023ADBC /* CalloutMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F997A71ED35CAC0023ADBC /* CalloutMapView.swift */; };
 		8FB60A9C020922C3CA2AE77E /* Pods_IDMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 787FA1C481C201065ED60231 /* Pods_IDMaps.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +44,7 @@
 		78C7BB201ED0F35000557FE9 /* MapBoxViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapBoxViewDelegate.swift; sourceTree = "<group>"; };
 		78F9979E1ED2EA8F0023ADBC /* MapGeocoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapGeocoder.swift; sourceTree = "<group>"; };
 		78F997A01ED2FD4D0023ADBC /* MapViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewDelegate.swift; sourceTree = "<group>"; };
+		78F997A71ED35CAC0023ADBC /* CalloutMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalloutMapView.swift; sourceTree = "<group>"; };
 		9009EE74A800053608270732 /* Pods-IDMaps.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IDMaps.release.xcconfig"; path = "Pods/Target Support Files/Pods-IDMaps/Pods-IDMaps.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -132,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				78C7BB181ECF9AC900557FE9 /* SettingsCell.swift */,
+				78F997A71ED35CAC0023ADBC /* CalloutMapView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -295,6 +298,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78F997A81ED35CAC0023ADBC /* CalloutMapView.swift in Sources */,
 				78C7BB211ED0F35000557FE9 /* MapBoxViewDelegate.swift in Sources */,
 				78C7BB151ECF807400557FE9 /* UIView.swift in Sources */,
 				78F9979F1ED2EA8F0023ADBC /* MapGeocoder.swift in Sources */,

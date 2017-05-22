@@ -9,15 +9,38 @@
 import Mapbox
 
 class MapBoxViewDelegate: MapViewDelegate, MGLMapViewDelegate {
-    func mapView(_ mapView: MGLMapView, didSelect annotation: MGLAnnotation) {
-        mapView.setCenter(annotation.coordinate, animated: true)
-        self.geocoder.reverseGeocodeLocation(CLLocation(latitude: annotation.coordinate.latitude, longitude: annotation.coordinate.longitude)) { (result, erroe) in
-            
+    public func mapView(_ mapView: MGLMapView, didSelect annotationView: MGLAnnotationView) {
+        guard let coordinate = annotationView.annotation?.coordinate else {
+            return
         }
-
+        
+        if let marker = annotationView.subviews.first as? UIImageView {
+            self.mapViewDidSelect(coordinate: coordinate, withView: marker)
+        }
     }
     
-    func mapView(_ mapView: MGLMapView, didSelect annotationView: MGLAnnotationView) {
+    public func mapView(_ mapView: MGLMapView, viewFor annotation: MGLAnnotation) -> MGLAnnotationView? {
+        if let annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: kMapCalloutViewIdentifier) {
+            return annotationView
+        }
         
+        return MGLAnnotationView.customMarkerAnnonationView(reuseIdentifier: kMapCalloutViewIdentifier)
     }
 }
+
+extension MGLAnnotationView {
+    class func customMarkerAnnonationView(reuseIdentifier: String) -> MGLAnnotationView {
+        let annotationView = MGLAnnotationView(reuseIdentifier: reuseIdentifier)
+        
+        let imageView = UIImageView(image: UIImage(named: "red_pin"))
+        imageView.contentMode = .center
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        
+        annotationView.addSubview(imageView)
+        imageView.centerXAnchor.constraint(equalTo: annotationView.centerXAnchor).isActive = true
+        imageView.bottomAnchor.constraint(equalTo: annotationView.topAnchor).isActive = true
+        
+        return annotationView
+    }
+}
+
