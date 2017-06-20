@@ -1,0 +1,42 @@
+fastlane_version "2.39.1"
+
+default_platform :ios
+
+platform :ios do
+  before_all do
+    cocoapods    
+  end
+
+  lane :changeLog do
+v2_changelog = generate_release_changelog(
+  github_project: 'igoronix/IDMaps',
+  github_api_token: 'a5edd2a5b6ca821e50f55cae32b5dd82df4bb42e',
+  base_branch: 'master',
+  template_path: 'fastlane/changelog_template.erb',
+  tag_a: 'v1’,
+  tag_b: 'v0', # Optional, will be prompted if not provided
+  skip_tag_b: true, # Optional, defaults to false
+  output_path: 'RELEASE_1.md' # Optional
+)
+end
+
+  lane :beta do
+    cert()
+    sigh(
+	app_identifier:’com.id.idmaps’)
+    clear_derived_data(
+	derived_data_path: './DerivedData')
+    gym(
+        scheme: ‘IDMaps’,
+	clean: true,
+	derived_data_path: './DerivedData’)
+    end
+
+
+  after_all do |lane|
+	changeLog()
+  end
+
+  error do |lane, exception|
+  end
+end
