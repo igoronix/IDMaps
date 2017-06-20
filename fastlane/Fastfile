@@ -18,7 +18,7 @@ platform :ios do
   end
 
   lane :beta do
-    #cert()
+    cert()
     sigh(
 	app_identifier:’com.brainbeanapps.HelloWorld’)
     clear_derived_data(
