@@ -1,0 +1,6 @@
+framework module Pods_IDMaps {
+  umbrella header "Pods-IDMaps-umbrella.h"
+
+  export *
+  module * { export * }
+}
