@@ -10,15 +10,25 @@ platform :ios do
   lane :changeLog do
 v2_changelog = generate_release_changelog(
   github_project: 'igoronix/IDMaps',
-  github_api_token: 'a5edd2a5b6ca821e50f55cae32b5dd82df4bb42e',
+  github_api_token: '4756c6b6ecb19942a4c42d05c31ecb9ce223b879',
   base_branch: 'master',
   template_path: 'fastlane/changelog_template.erb',
-  tag_a: 'v1’,
+  tag_a: 'v3’,
   tag_b: 'v0', # Optional, will be prompted if not provided
-  skip_tag_b: true, # Optional, defaults to false
+  #skip_tag_b: true, # Optional, defaults to false
   output_path: 'RELEASE_1.md' # Optional
 )
 end
+
+  lane :changeLog2 do
+	v2_changelog = changelog_from_git_commits(
+	pretty: '%ai %h -%d %s <%an>',
+	date_format: "short",
+	between: [“v0”, “v3”])
+	
+	File.open('ReleaseNotes.txt', 'w') { |file| 		
+	file.write(v2_changelog) }
+  end
 
   lane :beta do
     cert()
