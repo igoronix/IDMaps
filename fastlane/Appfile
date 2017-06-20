@@ -1,5 +1,5 @@
-app_identifier "" # The bundle identifier of your app
-apple_id "igoronix@gmail.com" # Your Apple email address
+apple_id ENV['APPLE_ID']
+app_identifier “com.id.idmaps”
 
 team_id "94PF3DD2J4" # Developer Portal Team ID
 
