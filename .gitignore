@@ -5,3 +5,5 @@ contents.xcworkspacedata
 IDMaps/IDMaps.xcodeproj/xcuserdata/igor.xcuserdatad/xcdebugger
 IDMaps/IDMaps.xcworkspace/xcuserdata
 IDMaps/Pods
+IDMaps/.bundle
+IDMaps/.gems
