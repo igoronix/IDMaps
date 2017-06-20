@@ -18,9 +18,9 @@ platform :ios do
   end
 
   lane :beta do
-    cert()
+    #cert()
     sigh(
-	app_identifier:’com.id.idmaps’)
+	app_identifier:’com.brainbeanapps.HelloWorldDev’)
     clear_derived_data(
 	derived_data_path: './DerivedData')
     gym(
