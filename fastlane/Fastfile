@@ -20,7 +20,7 @@ platform :ios do
   lane :beta do
     #cert()
     sigh(
-	app_identifier:’com.brainbeanapps.HelloWorldDev’)
+	app_identifier:’com.brainbeanapps.HelloWorld’)
     clear_derived_data(
 	derived_data_path: './DerivedData')
     gym(

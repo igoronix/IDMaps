@@ -1,4 +1,4 @@
 apple_id ENV['APPLE_ID']
-app_identifier “com.brainbeanapps.HelloWorldDev”
+app_identifier “com.brainbeanapps.HelloWorld”
 
 team_id "94PF3DD2J4" # Developer Portal Team ID
