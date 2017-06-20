@@ -8,19 +8,6 @@ platform :ios do
   end
 
   lane :changeLog do
-v2_changelog = generate_release_changelog(
-  github_project: 'igoronix/IDMaps',
-  github_api_token: '4756c6b6ecb19942a4c42d05c31ecb9ce223b879',
-  base_branch: 'master',
-  template_path: 'fastlane/changelog_template.erb',
-  tag_a: 'v3’,
-  tag_b: 'v0', # Optional, will be prompted if not provided
-  #skip_tag_b: true, # Optional, defaults to false
-  output_path: 'RELEASE_1.md' # Optional
-)
-end
-
-  lane :changeLog2 do
 	v2_changelog = changelog_from_git_commits(
 	pretty: '%ai %h -%d %s <%an>',
 	date_format: "short",
