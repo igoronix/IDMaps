@@ -11,7 +11,7 @@ platform :ios do
 	v2_changelog = changelog_from_git_commits(
 	pretty: '%ai %h -%d %s <%an>',
 	date_format: "short",
-	between: [“v0”, “v3”])
+	between: [“v0”, “HEAD”])
 	
 	File.open('ReleaseNotes.txt', 'w') { |file| 		
 	file.write(v2_changelog) }
