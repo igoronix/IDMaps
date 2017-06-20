@@ -27,6 +27,8 @@ platform :ios do
         scheme: ‘IDMaps’,
 	clean: true,
 	derived_data_path: './DerivedData’)
+    clear_derived_data(
+	derived_data_path: './DerivedData')
     end
 
 

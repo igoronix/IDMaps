@@ -209,7 +209,7 @@
 				TargetAttributes = {
 					782B11601ECF736B00C71FA6 = {
 						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = 5U67EGLCUP;
+						DevelopmentTeam = 94PF3DD2J4;
 						ProvisioningStyle = Manual;
 					};
 				};
@@ -433,14 +433,14 @@
 			baseConfigurationReference = 6D39448956050CEA33059ABE /* Pods-IDMaps.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 5U67EGLCUP;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				DEVELOPMENT_TEAM = 94PF3DD2J4;
 				INFOPLIST_FILE = IDMaps/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.id.maps.IDMaps;
+				PRODUCT_BUNDLE_IDENTIFIER = com.id.idmaps;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "7a01a18a-6682-4bc1-a838-d06cefd14bd3";
-				PROVISIONING_PROFILE_SPECIFIER = "Development wildcard profile";
+				PROVISIONING_PROFILE = "07b99737-af3d-4f0e-be56-8a5d2948ce7b";
+				PROVISIONING_PROFILE_SPECIFIER = "com.id.idmaps AppStore 1497962522";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -450,14 +450,14 @@
 			baseConfigurationReference = 9009EE74A800053608270732 /* Pods-IDMaps.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = H947P5E33N;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				DEVELOPMENT_TEAM = 94PF3DD2J4;
 				INFOPLIST_FILE = IDMaps/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.id.maps.IDMaps;
+				PRODUCT_BUNDLE_IDENTIFIER = com.id.idmaps;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "81c2bea4-ab46-4c9b-8cfe-4620fd89c370";
-				PROVISIONING_PROFILE_SPECIFIER = "Igor'sPersonalProfile";
+				PROVISIONING_PROFILE = "07b99737-af3d-4f0e-be56-8a5d2948ce7b";
+				PROVISIONING_PROFILE_SPECIFIER = "com.id.idmaps AppStore 1497962522";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
