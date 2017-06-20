@@ -8,3 +8,9 @@ IDMaps/Pods
 IDMaps/.bundle
 IDMaps/.gems
 IDMaps/DerivedData
+Gemfile.lock
+IDMaps.app.dSYM.zip
+IDMaps.ipa
+*.md
+ReleaseNotes.txt
+report.xml
