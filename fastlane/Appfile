@@ -1,5 +1,5 @@
 apple_id ENV['APPLE_ID']
-app_identifier “com.id.idmaps”
+app_identifier “com.brainbeanapps.IdMaps”
 
 team_id "94PF3DD2J4" # Developer Portal Team ID
 
