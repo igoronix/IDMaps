@@ -1,41 +1,87 @@
-fastlane_version "2.37.0"
+fastlane_version '2.8.0'
 
-default_platform :ios
+ENV['CERT_OUTPUT_PATH'] = 'vendor/certs'
+ENV['SIGH_OUTPUT_PATH'] = 'vendor/profiles'
 
-platform :ios do
-  before_all do
-    cocoapods    
+ENV['LAST_STABLE_TAG'] = 'last_stable_build'
+ENV['RELEASE_NOTES_FILE'] = '../Artifacts/ReleaseNotes.txt'
+
+lane :addSuccessfullyBuildTag do
+  add_git_tag(
+    tag:ENV['LAST_STABLE_TAG'],
+    force: true
+  )
+  push_git_tags(force: true)
+end
+
+lane :changeLog do
+  if git_tag_exists(tag: ENV['LAST_STABLE_TAG'])
+    v2_changelog = changelog_from_git_commits(
+    pretty: '%ai %h -%d %s <%an>',
+    date_format: "short",
+    between: [ENV['LAST_STABLE_TAG'], “HEAD”])
+  
+    File.open(ENV['RELEASE_NOTES_FILE'], 'w') { |file | file.write(v2_changelog) }
+  end
+end
+
+lane :sendChangelogsToCrashlytics do
+  text = File.open(ENV['RELEASE_NOTES_FILE']).read
+  crashlytics(
+    groups: ENV['CRASHLYTICS_GROUPS'],
+    notes: text)
+end
+
+
+lane :cibuild do
+
+  update_info_plist(
+    plist_path: ENV['APP_PLIST'],
+    display_name: ENV['APP_DISPLAY_NAME'])
+
+  update_app_identifier(
+    plist_path: ENV['APP_PLIST'],
+    app_identifier: ENV['APP_IDENTIFIER'])
+
+  if ENV['BUILD_NUMBER']
+    increment_build_number(
+      build_number: ENV['BUILD_NUMBER'])
   end
 
-  lane :changeLog do
-	v2_changelog = changelog_from_git_commits(
-	pretty: '%ai %h -%d %s <%an>',
-	date_format: "short",
-	between: [“v0”, “HEAD”])
-	
-	File.open('ReleaseNotes.txt', 'w') { |file| 		
-	file.write(v2_changelog) }
+  if ENV['KEYCHAIN_PATH']
+    unlock_keychain(
+      path: ENV['KEYCHAIN_PATH'],
+      password: ENV['KEYCHAIN_PASSWORD'],
+      add_to_search_list: true,
+      set_default: true)
   end
 
-  lane :beta do
-    cert()
-    sigh(
-	app_identifier:’com.brainbeanapps.HelloWorld’)
-    clear_derived_data(
-	derived_data_path: './DerivedData')
-    gym(
-        scheme: ‘IDMaps’,
-	clean: true,
-	derived_data_path: './DerivedData’)
-    clear_derived_data(
-	derived_data_path: './DerivedData')
-    end
+  sigh(
+    adhoc: true,
+    skip_certificate_verification: true)
 
+  cocoapods(
+    use_bundle_exec: false)
 
-  after_all do |lane|
-	changeLog()
-  end
+  gym(
+    scheme: ENV['APP_SCHEME'],
+    clean: true,
+    derived_data_path: './DerivedData',
+    output_directory: './Artifacts',
+    archive_path: './Archives/' + ENV['APP_SCHEME'] + '.xcarchive',
+    export_method: 'ad-hoc')
 
-  error do |lane, exception|
-  end
+  zip(
+    path: './Archives/' + ENV['APP_SCHEME'] + '.xcarchive',
+    output_path: File.absolute_path('../Artifacts/' + ENV['APP_SCHEME'] + '.xcarchive.zip'))
+
+  changeLog()
+
+  addSuccessfullyBuildTag()  
+end
+
+after_each do |lane, options|
+end
+
+error do |lane, exception, options|
 end
