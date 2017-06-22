@@ -434,6 +434,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CURRENT_PROJECT_VERSION = 0;
 				DEVELOPMENT_TEAM = 94PF3DD2J4;
 				INFOPLIST_FILE = IDMaps/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -442,6 +443,7 @@
 				PROVISIONING_PROFILE = "07b99737-af3d-4f0e-be56-8a5d2948ce7b";
 				PROVISIONING_PROFILE_SPECIFIER = "com.id.idmaps AppStore 1497962522";
 				SWIFT_VERSION = 3.0;
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
 		};
@@ -451,6 +453,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CURRENT_PROJECT_VERSION = 0;
 				DEVELOPMENT_TEAM = 94PF3DD2J4;
 				INFOPLIST_FILE = IDMaps/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -459,6 +462,7 @@
 				PROVISIONING_PROFILE = "07b99737-af3d-4f0e-be56-8a5d2948ce7b";
 				PROVISIONING_PROFILE_SPECIFIER = "com.id.idmaps AppStore 1497962522";
 				SWIFT_VERSION = 3.0;
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
 		};
